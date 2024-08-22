@@ -91,59 +91,65 @@ nav ul li a:hover {
     transform: scale(1.1); /* Agranda la imagen ligeramente */
 }
 
-/* Menú hamburguesa 
+/*Menu hamburguesa para dispositivos móviles*/
 .hamburger-menu {
     display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 20px;
     cursor: pointer;
 }
 
 .hamburger-menu .bar {
-    width: 100%;
+    width: 25px;
     height: 3px;
     background-color: white;
-    border-radius: 10px;
+    margin: 5px;
+    transition: 0.3s;
 }
 
-.menu-active {
-    display: block;
-}
-
-.hamburger-active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger-active .bar:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-}
-
-.hamburger-active .bar:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-}*/
-
-/* Ajustes para móviles 
+/* Estilos para el menú en móvil */
 @media (max-width: 768px) {
     .menu {
         display: none;
         flex-direction: column;
+        width: 100%;
         position: absolute;
         top: 60px;
         left: 0;
-        width: 100%;
         background-color: rgba(174, 153, 255, 1);
+        z-index: 1000;
     }
 
-    .menu-active {
+    .menu.active {
         display: flex;
+    }
+
+    .menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    .menu ul li {
+        margin: 10px 0;
     }
 
     .hamburger-menu {
-        display: flex;
+        display: block;
     }
-}*/
+}
+
+/* Animación del menú hamburguesa */
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
 
 /* Imágenes de idioma */
 .banderas {
@@ -447,14 +453,18 @@ nav ul li a:hover {
 
 #explicacionProyectos {
     display: flex;
-    flex-direction: column;
+    /*flex-direction: column;*/
+    flex-direction: row;
     gap: 20px; /* Espacio entre filas */
     margin: 20px;
+    flex-wrap: wrap;
 }
 
 #superior, #inferior {
     display: flex;
+    flex-direction: row; /* Muestra los proyectos en fila */
     justify-content: space-between; /* Espacia los elementos horizontalmente */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan si es necesario */
 }
 
 .imagen-proyecto {

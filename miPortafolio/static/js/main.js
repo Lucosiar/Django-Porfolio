@@ -17,13 +17,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // JS para descargar CV
     window.descargarCV = function () {
         // URL del archivo PDF que quieres descargar
-        var pdfURL = "/static/cuVitae/LuciaCosioCVAzul.pdf";
+        var pdfURL = "/static/cuVitae/LuciaCosioCV.pdf";
 
         // Crea un elemento de enlace temporal
         var enlaceTemporal = document.createElement("a");
         enlaceTemporal.style.display = "none";
         enlaceTemporal.href = pdfURL;
-        enlaceTemporal.download = "nombre_del_archivo.pdf"; // Nombre del archivo a descargar
+        enlaceTemporal.download = "LuciaCosioCV.pdf"; 
 
         // Agrega el enlace temporal al documento
         document.body.appendChild(enlaceTemporal);
@@ -59,5 +59,15 @@ document.addEventListener('DOMContentLoaded', function() {
         img.addEventListener('click', function() {
             // Implementar funcionalidad de vista previa en pantalla completa o lightbox aquí.
         });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const menu = document.querySelector('.menu');
+
+    hamburgerMenu.addEventListener('click', function() {
+        menu.classList.toggle('active');
+        hamburgerMenu.classList.toggle('active');
     });
 });

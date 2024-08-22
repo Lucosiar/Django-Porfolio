@@ -1,0 +1,331 @@
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCA Developer</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <link rel="icon" href="{% static 'imagen/serpienteMorada.ico' %}" type="image/x-icon">
+</head>
+
+<body>
+
+    <div class="barraArriba">
+        <div class="logo">LCA</div>
+        
+        <!-- Botón del menú hamburguesa -->
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <!-- Menú de navegación -->
+        <nav class="menu">
+            <ul>
+                <li><a href="#presentacion">Inicio</a></li>
+                <li><a href="#sobreMi">Sobre mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="{% url 'galeria' %}">Galería</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="banderasIdiomas">
+            <ul class="imagenesBarraArriba">
+                <li>
+                    <form action="{% url 'cambiar_idioma' 'es' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">
+                            <img src="{% static 'imagen/espana.png' %}" alt="{% trans 'Imagen español'%}" style="max-width: 50px;">
+                        </button>
+                    </form>
+                </li>
+                <li>
+                    <form action="{% url 'cambiar_idioma' 'en' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" id="ukButton" title="In progress">
+                            <img src="{% static 'imagen/reino-unido.png' %}" alt="{% trans 'Imagen inglés'%}" style="max-width: 50px;">
+                        </button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main">
+        <section id="presentacion">
+            <div id="imagen">
+                <img src="{% static 'imagen/codee.png' %}" alt="{% trans 'Imagen presentacion'%}" style="max-width: 400px;">
+            </div>
+            <div id="textoPresentacion">
+                <h1 id="textPrincipal">Hola, soy Lucía</h1>
+                <h1 id="textoSecundario">Desarrolladora de aplicaciones Android / PC <br> Analista de datos</h1>
+            </div>
+        </section>
+        <!--<div class="descubreMas">
+            <h2 id="textoDescubrir">Desliza para saber más</h2>
+            <img id="dedo" src="{% static 'imagen/dedo.png' %}" alt="{% trans 'Imagen presentacion'%}" style="max-width: 100px;">
+        </div>-->
+        
+        <section id="sobreMi">
+            <div id="divSobreMi">
+                <div id="primerSobreMi" class="fila">
+                    <div id="yo" class="cuadro">
+                        <h1>{% trans "¿Quién soy?" %}</h1>
+                        <p>Me llamo Lucía Cosío Artime, estoy terminando de cursar un máster de inteligencia artificial y siempre me ha apasionado el mundo de la informática. <br> Me gusta el desarrollo de aplicaciones Android (en un futuro me gustaría sacarme un curso de aplicaciones IOS) y también tengo un gran interés en la inteligencia artificial.
+                        <br>He intentado desarrollar varias aplicaciones para aplicar mis habilidades técnicas, pulirlas y seguir aprendiendo.</p>
+                        <button id="botonCV" onclick="descargarCV()">Descargar CV</button>
+                    </div>
+
+                    <div id="hobbies" class="cuadroImagen">
+                        <h1>Mis hobbies</h1>
+                        <div class="imagenesHobbies">
+                            <div class="tooltip top">
+                                <img src="{% static 'imagen/baseball.png' %}" 
+                                    alt="Softball" style="max-width: 100px;">
+                                <span class="tiptext">Juego a softball</span>
+                            </div>
+
+                            <div class="tooltip top">
+                                <img src="{% static 'imagen/formula.png' %}"
+                                    alt="Coches" style="max-width: 100px;">
+                                <span class="tiptext">Soy una apasionada del motor</span>
+                            </div>
+
+                            <div class="tooltip top">
+                                <img src="{% static 'imagen/camara-de-fotos.png' %}" 
+                                    alt="Fotografía" style="max-width: 100px;">
+                                <span class="tiptext">Me encanta la fotografía</span>
+                            </div>
+
+                            <div class="tooltip top">
+                                <img src="{% static 'imagen/videojuegos.png' %}" 
+                                    alt="Videojuegos" style="max-width: 100px;">
+                                <span class="tiptext">Me gusta jugar a videojuegos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="segundoSobreMi" class="fila">
+                    <div id="habilidades">
+                        <div id="lenguajes" class="cuadroImagen">
+                            <h1>Habilidades</h1>
+                            <div class="imagenesLenguajes">
+                                <div class="tooltip top">
+                                    <img src="{% static 'imagen/java.png' %}" alt="{% trans 'Java'%}"
+                                    style="max-width: 100px;">
+                                    <span class="tiptext">
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 80%;"></div>
+                                            </div>
+                                            <span class="progress-text">Java: Avanzado</span>
+                                    </span>
+                                </div>
+
+                                <div class="tooltip top">
+                                    <img src="{% static 'imagen/Kotlin_Icon.png' %}" alt="{% trans 'Kotlin'%}"
+                                    style="max-width: 90px;">
+                                    <span class="tiptext">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 75%;"></div>
+                                        </div>
+                                        <span class="progress-text">Kotlin: Avanzado</span>
+                                    </span>
+                                </div>
+
+                                <div class="tooltip top">
+                                    <img src="{% static 'imagen/python.png' %}" alt="{% trans 'Python'%}"
+                                    style="max-width: 80;">
+                                    <span class="tiptext">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 90%;"></div>
+                                        </div>
+                                        <span class="progress-text">Python: Avanzado</span>
+                                    </span>
+                                </div>
+                                
+                                <div class="tooltip top">
+                                    <img src="{% static 'imagen/sql.png' %}" alt="{% trans 'SQL'%}"
+                                    style="max-width: 95px;">
+                                    <span class="tiptext">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 70%;"></div>
+                                        </div>
+                                        <span class="progress-text">SQL: Medio</span>
+                                    </span>
+                                </div>
+
+                                <div class="tooltip top">
+                                    <img src="{% static 'imagen/csharp.png' %}" alt="{% trans 'C#'%}"
+                                    style="max-width: 85px;">
+                                    <span class="tiptext">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 40%;"></div>
+                                        </div>
+                                        <span class="progress-text">C#: Básico</span>
+                                    </span>
+                                </div>
+
+                                <div class="tooltip top">
+                                    <img src="{% static 'imagen/css.png' %}" alt="{% trans 'CSS'%}"
+                                    style="max-width: 100px;">
+                                    <span class="tiptext">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 40%;"></div>
+                                        </div>
+                                        <span class="progress-text">CSS: Básico</span>
+                                    </span>
+                                </div>
+
+                                <div class="tooltip top">
+                                    <img src="{% static 'imagen/html.png' %}" alt="{% trans 'HTML'%}"
+                                    style="max-width: 100px;">
+                                    <span class="tiptext">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 60%;"></div>
+                                        </div>
+                                        <span class="progress-text">HTML: Medio</span>
+                                    </span>
+                                </div>
+
+                                <div class="tooltip top">
+                                    <img src="{% static 'imagen/js.png' %}" alt="{% trans 'JavaScript'%}"
+                                    style="max-width: 95px;">
+                                    <span class="tiptext">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 30%;"></div>
+                                        </div>
+                                        <span class="progress-text">JavaScript: Básico</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--Falta poner enlace directo a la pagina de github y kaggle, no sé si se puede subir algun proyecto a parte-->
+        <!-- Poner varios recuadros blancos como los anteriores para poner nombre del proyecto, explicación y enlace directo-->
+        <!--
+            https://www.kaggle.com/lcosioa
+            https://github.com/Lucosiar
+            https://www.linkedin.com/in/lucia-cosio-artime-c16012022/
+        -->
+        <section id="proyectos">
+            <div>
+                <h1 id="textoProyectos">Mis proyectos</h1>
+                <div id="iconos_proyectos">
+                    <a href="https://github.com/Lucosiar" target="_blank">
+                        <img src="{% static 'imagen/github.png' %}" style="max-width: 80px;">
+                    </a>
+                    <a href="https://www.kaggle.com/lcosioa" target="_blank">
+                        <img src="{% static 'imagen/kaggle_icon.png' %}" style="max-width: 80px;">
+                    </a>
+                </div>
+            </div>
+            <div  id="explicacionProyectos">
+                <div id="superior">
+                    <div class="cuadro">
+                        <a href="https://github.com/Lucosiar/Efi_Cura" class="enlace_proyecto" target="_blank">
+                            <div class="icono-lenguaje">
+                                <img src="{% static 'imagen/java.png' %}" alt="Icono Lenguaje">
+                            </div>
+                            <h1>Proyecto Efi-Cura</h1>
+                            <img src="{% static 'imagen/proyectos/icono_eficura.png' %}" style="max-width: 80px;" alt="Icono efi-cura" class="imagen-proyecto">
+                            <p>Aplicación android para proyecto de FP DAM, desarollé una app diseñada para simplificar la gestión de medicamento, incluyendo las dosis, horarios, también gestiona las citas médicas y los médicos, además de tener un historial de síntomas. La aplicación no está terminada y funciona lo básico. Intenté incluir en su momento el OCR para que el usuario no tenga que escribir la medicación pero no llego a funcionar del todo. </p>
+                        </a>
+                    </div>
+                    <div class="cuadro">
+                        <a href="https://github.com/Lucosiar/PDF-Editor" class="enlace_proyecto" target="_blank">
+                            <div class="icono-lenguaje">
+                                <img src="{% static 'imagen/python.png' %}" alt="Icono Lenguaje">
+                            </div>
+                            <h1>Proyecto PDF-Editor</h1>
+                            <img src="{% static 'imagen/proyectos/disposicion.png' %}" style="max-width: 80px;" alt="Icono efi-cura" class="imagen-proyecto">
+                            <p>Aplicación de escritorio creada con Python sobre consola para no tener que utilizar páginas online. Sirve para convertir imágenes (JPG, PNG, BMP) a PDF, juntar varios PDFs, combinar varias imágenes  en un solo PDF. La he desarrollado para investigar el funcionamiento de varias bibliotecas y conocer más sobre el tema. </p>
+                        </a>
+                    </div>
+                </div>
+                <div id="inferior">
+                    <div class="cuadro">
+                        <a href="https://www.kaggle.com/code/lcosioa/acnh-fish" class="enlace_proyecto" target="_blank">
+                            <div class="icono-lenguaje">
+                                <img src="{% static 'imagen/python.png' %}" alt="Icono Lenguaje">
+                            </div>
+                            <h1>Análisis de peces Animal Crossing</h1>
+                            <img src="{% static 'imagen/pez_dorado_acnh_c.png' %}" style="max-width: 80px;" alt="Icono efi-cura" class="imagen-proyecto">
+                            <p>Estudio sobre los peces en el juego de Animal Crossing New Horizon de la Nintendo Switch en el que calculé el tiempo que un jugador debería jugar cada día o que meses y horas deberías jugar para capturar todas las especies del juego sin perder el tiempo. También depende de la habilidad de cada jugador para capturar los peces y las cañas que se usen. </p>
+                        </a>
+                    </div>
+                    <div class="cuadro">
+                        <a href="https://www.kaggle.com/code/lcosioa/analysis-suicide-rates" class="enlace_proyecto" target="_blank">
+                            <div class="icono-lenguaje">
+                                <img src="{% static 'imagen/python.png' %}" alt="Icono Lenguaje">
+                            </div>
+                            <h1>Análisis suicidios 1990 - 2022 </h1>
+                            <img src="{% static 'imagen/grafica_suicidios.png' %}" style="max-width: 80px;" alt="Icono efi-cura" class="imagen-proyecto">
+                            <p>El análisis de estudio sobre los suicidios entre 1990 y 2022 se realizará en función del país, los años en los que viven, la edad del usuario, etc. He limpiado los datos y elaborado unas gráficas con el propósito de exponer la cantidad de suicidios en el mundo, la correlación entre el PIB y la tasa de suicidios, la tendencia de suicidios a lo largo del tiempo, la distribución por regiones, la tasa media de los países más destacados.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Arreglar para que no este descentrado-->
+        <section id="contacto">
+            <div class="formularioContacto">
+                <h1 id="textoContacto">Contacto</h1>
+                <div class="imagenesContacto">
+                    <a href="https://www.linkedin.com/in/lucia-cosio-artime-c16012022/" target="_blank">
+                        <img src="{% static 'imagen/linkedin.png' %}" alt="{% trans 'Linkedin'%}" style="max-width: 80px;">
+                    </a>
+                    <a href="mailto:lucosiar333@gmail.com?subject=Escribe aquí el asunto del correo&body=¿Que deseas comentarme?">
+                        <img src="{% static 'imagen/gmail.png' %}" alt="{% trans 'Correo'%}" style="max-width: 80px;">
+                    </a>
+                </div>
+
+                <div>
+                    <h4>Sino mandame un correo directamente por aquí:</h4>
+                </div>
+                <form id="contactForm"  action="{% url 'contacto' %}" method="post"
+                    onsubmit="return validateForm()">
+                    {% csrf_token %}
+
+                    <div class="campo">
+                        <input type="text" name="nombre" id="nombre" placeholder="Tu nombre" >
+                    </div>
+
+                    <div class="campo">
+                        <input type="email" name="correo" id="correo" placeholder="Tu correo electrónico">
+                    </div>
+
+                    <div class="campo">
+                        <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí" rows="6"
+                            ></textarea>
+                    </div>
+                    <div id="error-message" style="color: red; display: none; margin-top: 10px;"></div>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="pieDePagina">
+            <div>
+                <p>© Copyright Lucía Cosío. All Rights Reserved</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

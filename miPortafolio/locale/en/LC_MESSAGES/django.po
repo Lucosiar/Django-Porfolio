@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-18 23:03+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\home\templates\home.html:19
+msgid "Inicio"
+msgstr "Home"
+
+#: .\home\templates\home.html:20
+msgid "Sobre mí"
+msgstr "About me"
+
+#: .\home\templates\home.html:21
+msgid "Proyectos"
+msgstr "Projects"
+
+#: .\home\templates\home.html:22 .\home\templates\home.html:121
+msgid "Contacto"
+msgstr "Contact"
+
+#: .\home\templates\home.html:24
+msgid "Imagen español"
+msgstr "Spanish image"
+
+#: .\home\templates\home.html:26
+msgid "Imagen inglés"
+msgstr "English image"
+
+#: .\home\templates\home.html:35
+msgid "Imagen presentacion"
+msgstr "Presentation image"
+
+#: .\home\templates\home.html:39
+msgid "Hola, me llamo Lucía"
+msgstr "Hello, my name is Lucía"
+
+#: .\home\templates\home.html:40
+msgid "Soy desarrolladora de Android y analista de datos"
+msgstr "I am an Android developer and data analyst."
+
+#: .\home\templates\home.html:48
+msgid "¿Quién soy?"
+msgstr "Who I am?"
+
+#: .\home\templates\home.html:49
+msgid "textoQuienSoy"
+msgstr "As I said before my name is Lucía Cosío Artime, I am still a student but I am passionate about the computer world,\
+                        I like the development of android applications and I also have a great interest in artificial\
+                        intelligence. I have tried to develop several applications to apply my technical skills,\
+                        polish them and keep learning."
+
+#: .\home\templates\home.html:50
+msgid "Descargar CV"
+msgstr "Download CV"
+
+#: .\home\templates\home.html:54
+msgid "Mis hobbies"
+msgstr "My hobbies"
+
+#: .\home\templates\home.html:57
+msgid "Juego en un equipo de softball"
+msgstr "I play softball"
+
+#: .\home\templates\home.html:60
+msgid "Soy una apasionada del motor"
+msgstr "I am passionate about motors"
+
+#: .\home\templates\home.html:63
+msgid "Me encanta la fotografía"
+msgstr "I love photography"
+
+#: .\home\templates\home.html:66
+msgid "Me gusta mucho jugar a videojuegos"
+msgstr "I really enjoy playing video games"
+
+#: .\home\templates\home.html:76
+msgid "Habilidades"
+msgstr "Skills"
+
+#: .\home\templates\home.html:78
+msgid "Java"
+msgstr ""
+
+#: .\home\templates\home.html:80
+msgid "Kotlin"
+msgstr ""
+
+#: .\home\templates\home.html:82
+msgid "Python"
+msgstr ""
+
+#: .\home\templates\home.html:84
+msgid "SQL"
+msgstr ""
+
+#: .\home\templates\home.html:86
+msgid "C#"
+msgstr ""
+
+#: .\home\templates\home.html:88
+msgid "CSS"
+msgstr ""
+
+#: .\home\templates\home.html:90
+msgid "HTML"
+msgstr ""
+
+#: .\home\templates\home.html:92
+msgid "JavaScript"
+msgstr ""
+
+#: .\home\templates\home.html:103
+msgid "Mis proyectos"
+msgstr "My projects"
+
+#: .\home\templates\home.html:123
+msgid "Linkedin"
+msgstr ""
+
+#: .\home\templates\home.html:124
+msgid "GitHub"
+msgstr ""
+
+#: .\home\templates\home.html:131
+msgid "Nombre:"
+msgstr "Name:"
+
+#: .\home\templates\home.html:132
+msgid "Tu nombre"
+msgstr "Your name"
+
+#: .\home\templates\home.html:136
+msgid "Correo electrónico:"
+msgstr "email"
+
+#: .\home\templates\home.html:137
+msgid "Tu correo electrónico"
+msgstr "email"
+
+#: .\home\templates\home.html:141
+msgid "Mensaje:"
+msgstr "Message:"
+
+#: .\home\templates\home.html:142
+msgid "Escribe tu mensaje aquí"
+msgstr "Write your message here"
+
+#: .\home\templates\home.html:145
+msgid "Enviar"
+msgstr "Send"
+
+#: .\home\templates\home.html:152
+msgid "Este portafolio ha sido creado con Python por Lucía Cosío."
+msgstr "This portfolio has been created with Python by Lucía Cosío."
+
+#: .\miPortafolio\settings.py:125
+msgid "English"
+msgstr ""
+
+#: .\miPortafolio\settings.py:126
+msgid "Spanish"
+msgstr ""

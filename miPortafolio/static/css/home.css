@@ -1,0 +1,630 @@
+/*color: #009688;
+#algoo (selector id)
+.algoo(selector de clase)*/
+
+/*Body*/
+/* Global Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(174, 153, 255, 1);
+    width: 100%;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+    box-sizing: border-box; /* Asegura que padding y border no excedan el ancho del contenedor */
+}
+
+.main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Barra Superior */
+.barraArriba {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    background-color: rgba(174, 153, 255, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    height: 10%;
+}
+
+.logo {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 43px;
+    margin-left: 3%;
+    color: white;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 23px;
+    padding: 10px 15px;
+    transition: 0.2s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: rgba(174, 153, 255, 1);
+    background-color: white;
+}
+
+/* Asegura que no haya bordes adicionales por defecto */
+.imagenesBarraArriba img {
+    border: none; /* Elimina bordes por defecto */
+    margin: 0; /* Elimina márgenes */
+    padding: 0; /* Elimina relleno */
+    max-width: 50px; /* Tamaño máximo */
+    height: auto; /* Mantiene proporciones */
+    transition: 0.3s ease; /* Transición suave */
+}
+
+/* Estilo al pasar el ratón por encima de las imágenes */
+.imagenesBarraArriba li:hover img {
+    border: 3px solid rgba(174, 153, 255, 1); /* Borde visible al pasar el ratón */
+    border-radius: 5px; /* Bordes redondeados opcional */
+    transform: scale(1.1); /* Agranda la imagen ligeramente */
+}
+
+/* Menú hamburguesa 
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.hamburger-menu .bar {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.menu-active {
+    display: block;
+}
+
+.hamburger-active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger-active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}*/
+
+/* Ajustes para móviles 
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(174, 153, 255, 1);
+    }
+
+    .menu-active {
+        display: flex;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+}*/
+
+/* Imágenes de idioma */
+.banderas {
+    display: flex;
+    align-items: center;
+}
+
+.imagenesBarraArriba {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-right: 33px;
+}
+
+.imagenesBarraArriba li {
+    margin-right: 1%;
+}
+
+/* Apartado principal */
+#presentacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(174, 153, 255, 1);
+    color: white;
+    padding: 15% 0; /* Margen lateral para dar espacio */
+    box-sizing: border-box;
+}
+
+/* Contenedor de la imagen */
+#imagen {
+    flex: 1; /* La imagen ocupa un espacio flexible */
+    max-width: 50%; /* La imagen ocupa un máximo del 50% del ancho */
+    text-align: center;
+}
+
+/* Estilo de la imagen */
+#imagen img {
+    max-width: 100%; /* La imagen ocupa el 100% del contenedor #imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* Contenedor del texto */
+#textoPresentacion {
+    flex: 1; /* El texto ocupa un espacio flexible */
+    max-width: 50%; /* El texto ocupa un máximo del 50% del ancho */
+    text-align: center; /* Alineación del texto a la izquierda */
+    padding: 5% 0;
+}
+
+/* Estilo del texto principal */
+#textPrincipal {
+    font-size: 60px;
+    margin: 0;
+    text-decoration: 2px underline;
+}
+
+/* Estilo del texto secundario */
+#textoSecundario {
+    font-size: 40px;
+    margin: 0;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    #presentacion {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        text-align: center; /* Centra el contenido en pantallas pequeñas */
+    }
+
+    #imagen, #textoPresentacion {
+        max-width: 100%; /* La imagen y el texto ocupan el 100% del ancho */
+    }
+
+    #textPrincipal {
+        font-size: 40px;
+    }
+
+    #textoSecundario {
+        font-size: 30px;
+    }
+}
+
+/* Descubre más 
+.descubreMas {
+    width: 100%; 
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10%;
+}
+*/
+/* Estilos del dedo 
+#dedo {
+    max-width: 100px;
+    animation: moverArribaAbajo 2s ease-in-out infinite;
+}
+*/
+/* Animación del dedo 
+@keyframes moverArribaAbajo {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}*/
+
+
+/* Animación 
+@keyframes moverArribaAbajo {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(20px); }
+}*/
+
+/* Sección Sobre Mí */
+#sobreMi {
+    width: 100%;
+    background-color: rgba(174, 153, 255, 1);
+}
+
+#divSobreMi {
+    display: flex;
+    flex-direction: column;
+}
+
+.fila {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 3%;
+}
+
+#yo, #hobbies {
+    width: calc(50% - 20px);
+    margin: 10px;
+    min-height: 200px;
+}
+
+.cuadro, .cuadroImagen {
+    flex: 1;
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 200px;
+}
+
+.imagenesHobbies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.imagenesHobbies img {
+    max-width: 100px;
+    margin: 0 12px;
+    flex: 0 0 calc(25% - 20px);
+    box-sizing: border-box;
+}
+
+/* Tooltips */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgba(174, 153, 255, 1);
+    color: white;
+    text-align: center;
+    border-radius: 3px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0 5px 10px rgba(174, 153, 255, 1);
+}
+
+.tooltip:hover .tiptext {
+    visibility: visible;
+}
+
+.tooltip.top .tiptext {
+    margin-left: -60px;
+    bottom: 125%;
+    left: 50%;
+}
+
+.tooltip.top .tiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(174, 153, 255, 1) transparent transparent transparent;
+}
+
+/* Barras de progreso */
+.progress-bar {
+    background-color: #fff;
+    height: 10px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+.progress-fill {
+    width: 0;
+    height: 100%;
+    background-color: #896dfa;
+    border-radius: 3px;
+}
+
+.progress-text {
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Habilidades */
+#habilidades {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagenesLenguajes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.imagenesLenguajes img {
+    max-width: 100px;
+    margin: 5px;
+    flex-basis: calc(25% - 10px);
+    box-sizing: border-box;
+}
+
+#botonCV {
+    margin-top: 5px;
+    color: white;
+    background-color: rgba(174, 153, 255, 1);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/*Efecto pasar el ratón por encima del botón CV*/
+#botonCV:hover {
+    background-color: #483d8b;
+    transform: scale(1.05); 
+}
+
+/* Proyectos */
+#proyectos {
+    width: 100%;
+    background-color: rgba(174, 153, 255, 1); /* Color de fondo */
+    text-align: center;
+    padding: 20px 0; /* Espaciado alrededor del contenido si es necesario */
+    box-sizing: border-box; /* Asegúrate de que el padding se incluya en el ancho total */
+}
+
+/* Estilos para el texto de proyectos */
+#textoProyectos {
+    font-size: 45px;
+    color: white;
+    margin: 5% 0; /* Espaciado superior e inferior */
+}
+
+#iconos_proyectos img{
+    margin-bottom: 25px;
+}
+
+/* Estilos para los enlaces y las imágenes */
+#proyectos a {
+    display: inline-block; /* Asegura que los enlaces se comporten como elementos en línea */
+    margin: 0 10px; /* Espacio entre imágenes, ajusta según sea necesario */
+}
+
+#proyectos a img {
+    display: block;
+    max-width: 80px; /* Tamaño de las imágenes */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+#explicacionProyectos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre filas */
+    margin: 20px;
+}
+
+#superior, #inferior {
+    display: flex;
+    justify-content: space-between; /* Espacia los elementos horizontalmente */
+}
+
+.imagen-proyecto {
+    max-width: 80px;
+    border: 2px solid white; /* Ajusta el color y el grosor del borde según prefieras */
+    border-radius: 10px; /* Opcional: añade bordes redondeados */
+    display: block; /* Asegura que la imagen se trate como un bloque */
+    margin: 0 auto; /* Centra la imagen dentro del contenedor */
+}
+
+.enlace_proyecto {
+    display: block; /* Asegura que el enlace ocupa todo el ancho del contenedor */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: inherit; /* Hereda el color del texto del contenedor */
+}
+
+/* Estilos para el texto dentro del contenedor */
+.cuadro h1, .cuadro p {
+    margin: 10px 0; /* Ajusta el margen superior e inferior del texto */
+    color: inherit; /* Asegura que el color del texto es consistente con el del contenedor */
+    padding: 2% 0;
+}
+
+/* Opcional: estilos adicionales para el texto del enlace */
+.enlace_proyecto h1, .enlace_proyecto p {
+    text-decoration: none; /* Elimina el subrayado en los elementos dentro del enlace */
+    color: inherit; /* Hereda el color del texto del contenedor */
+}
+
+
+.icono-lenguaje {
+    top: 10px; /* Ajusta la distancia desde el borde superior */
+    right: 10px; /* Ajusta la distancia desde el borde derecho */
+    background: rgba(255, 255, 255, 0.8); /* Fondo semitransparente, opcional */
+    border-radius: 50%; /* Hace que el fondo sea circular, opcional */
+    padding: 5px; /* Espaciado interno */
+}
+
+.icono-lenguaje img {
+    width: 30px; /* Ajusta el tamaño del ícono */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+
+/* Contacto */
+#textoContacto {
+    color: black;
+    font-size: 30px;
+}
+
+#contacto {
+    background-color: rgba(174, 153, 255, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    padding: 10% 0;
+}
+
+/* Estilos para el contenedor de imágenes de contacto */
+.imagenesContacto {
+    display: flex; /* Usa Flexbox para alinear las imágenes en fila */
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    gap: 20px; /* Espacio entre las imágenes; ajusta según sea necesario */
+    padding: 10px 0; /* Espaciado vertical alrededor del contenedor */
+    background-color: transparent; /* Asegúrate de que el fondo sea el deseado o transparente */
+}
+
+/* Estilos para las imágenes dentro del contenedor */
+.imagenesContacto a img {
+    display: block; /* Elimina el espacio en línea */
+    max-width: 80px; /* Ajusta el tamaño máximo de las imágenes */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin: 0; /* Elimina cualquier margen predeterminado */
+    padding: 0; /* Elimina cualquier relleno predeterminado */
+}
+
+.formularioContacto {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /*border: 2px solid slateblue;*/
+    border: 2mm ridge slateblue;
+    border-radius: 15px;
+    width: 40%;
+    max-width: 500px;
+    padding: 40px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.campo input[type="text"],
+.campo input[type="email"],
+.campo textarea {
+    width: 90%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    background-color: rgba(174, 153, 255, 1); /* Color de fondo del botón */
+    color: #ffffff; /* Color del texto del botón */
+    padding: 12px 24px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-size: 16px; /* Tamaño de la fuente */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave para el color de fondo y el efecto de escala */
+}
+
+
+button[type="submit"]:hover {
+    background-color: #483d8b; /* Color de fondo cuando se pasa el ratón por encima */
+    transform: scale(1.05); /* Efecto de escala al pasar el ratón */
+}
+
+/* Pie de página */
+#pieDePagina {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(174, 153, 255, 1);
+    color: white;
+    height: 100px;
+}
+
+#pieDePagina div {
+    text-align: center;
+}
+
+
+
+
+
+/* Agrega estilos para las secciones de la galería 
+#pagina-galeria {
+    display: none;
+    background-color: #333;
+    color: white;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+#pagina-galeria header {
+    padding: 20px;
+    background-color: #222;
+    text-align: center;
+}
+
+#pagina-galeria .galeria-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+#pagina-galeria .foto {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+#pagina-galeria .foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+*/

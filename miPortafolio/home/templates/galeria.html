@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> LCA Galería</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/galeria.css' %}">
+    <link rel="icon" href="{% static 'imagen/serpienteVerde.ico' %}" type="image/x-icon">
+</head>
+
+<body>
+
+    <div class="barraArriba">
+        <a href="javascript:history.back()" class="volver">
+            <img src="{% static 'imagen/hacia-atras.png' %}" alt="Volver">
+        </a>
+
+        <div class="logo">LCA Galería</div>
+    </div>
+    
+    <section class="galeria_de_fotos">
+        <div class="coches_galeria">
+            <h1 class="textoGaleria">Galería de coches</h1>
+            <div class="grid">
+                <img src="{% static 'imagen/galeria/coche_h1-12.jpg' %}" alt="Nissan derrapando">
+                <img src="{% static 'imagen/galeria/coche_v1-13.1.jpg' %}" alt="BMWs">
+                <img src="{% static 'imagen/galeria/coche_v2-8.jpg' %}" alt="Subaru">
+                <img src="{% static 'imagen/galeria/coche_h2-14.jpg' %}" alt="Nissan derrapando">
+            </div>
+        </div>
+        <div class="aviones_galeria">
+            <h1>Galería de aviones</h1>
+            <div class="grid">
+                <img src="{% static 'imagen/galeria/av_h4-5.jpg' %}" alt="Patrulla Águila">
+                <img src="{% static 'imagen/galeria/av_v2-4.jpg' %}" alt="Helicóptero Gijón">
+                <img src="{% static 'imagen/galeria/av_v4-10.jpg' %}" alt="PAPEA">
+                <img src="{% static 'imagen/galeria/av_h3-11.jpg' %}" alt="PAPEA">
+            </div>
+        </div>
+        <div class="varias_galeria">
+            <h1>Varias</h1>
+            <div class="grid">
+                <img src="{% static 'imagen/galeria/varia_h1.jpg' %}" alt="Paisaje Nevado">
+                <img src="{% static 'imagen/galeria/dep1-6.1.jpg' %}" alt="Jugadora de fútbol">
+                <img src="{% static 'imagen/galeria/dep2-7.1.jpg' %}" alt="Jugadora de fútbol">
+                <img src="{% static 'imagen/galeria/varia_h2.jpg' %}" alt="Desierto">
+            </div>
+        </div>
+    </section>
+    <section class="contacto">
+        <div class="formularioContacto">
+            <h1 id="textoContacto">Contacto</h1>
+            <div class="imagenesContacto">
+                <a href="https://www.instagram.com/cars_snapshot/" target="_blank">
+                    <img src="{% static 'imagen/instal_logo.png' %}" style="max-width: 80px;">
+                </a>
+                <a href="https://www.instagram.com/3cosi3/">
+                    <img src="{% static 'imagen/instal_logo.png' %}" style="max-width: 80px;">
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="pieDePagina">
+        <div>
+            <p>© Copyright Lucía Cosío. All Rights Reserved</p>
+        </div>
+    </section>
+</body>
+
+</html>
